@@ -1,6 +1,6 @@
-import React from 'react';
 
-const FlightAppBody = (props) => {
+
+const FlightAppHome = (props) => {
     const myFlightsHandler = () => {
         console.log("My Flights");
     }
@@ -17,4 +17,4 @@ const FlightAppBody = (props) => {
     );
 }
 
-export default FlightAppBody;
+export default FlightAppHome;
