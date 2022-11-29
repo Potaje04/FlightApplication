@@ -70,7 +70,7 @@ const flights = [
 function App() {
   let show = "";
   const [logged, setlogged] = useState(false);
-
+  
   if (!logged) {
     show = <Logging setlogged={setlogged} />;
   } else {
