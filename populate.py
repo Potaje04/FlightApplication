@@ -11,16 +11,23 @@ def main():
 
 
     for a in range(10):
+        month = random.randint(1,12)
+        day = random.randint(1,28)
+        if day < 10: 
+            day = "0" + str(day)
+        if month < 10: 
+            month = "0" + str(month)
 
+        date = str(random.randint(2022,2023))+"-"+ str(month) +"-" + str(day)
         r = requests.post('http://localhost:8080/flights/create', json={"origin": "Madrid",
     "destination": origins[random.randint(0, 7)],
     "scales": random.randint(0, 4),
     "luggage": bool(random.getrandbits(1)),
     "airline": airlines[random.randint(0, 3)],
-    "date": "2023-"+ str(random.randint(1,12)) +"-" + str(random.randint(1,28)),
+    "date": date,
     "flightNumber": random.randint(10000000, 99999999),
-    "transitTime": (random.randint(1, 5) + random.randint(1, 9)/10),
-    "layover": bool(random.getrandbits(1)),
+    "transitTimeMinutes": random.randint(45, 600),
+    "layoverInMinutes": random.randint(45, 600)
 })
     print(r)
 
