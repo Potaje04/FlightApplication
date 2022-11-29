@@ -1,12 +1,11 @@
-package com.flights.FlightApp.Service;
-
+package com.FlightApp.Userside.Users.Service;
+import com.FlightApp.Userside.Users.Types.User;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.flights.FlightApp.Repository.UserRepository;
-import com.flights.FlightApp.Types.User;
+import com.FlightApp.Userside.Users.Repository.UserRepository; 
 
 @Service
 public class UserServiceImplementation implements UserService{

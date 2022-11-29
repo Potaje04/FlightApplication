@@ -1,4 +1,4 @@
-package com.flights.FlightApp.Controllers;
+package com.FlightApp.Userside.Users.Controllers;
 
 import java.util.List;
 
@@ -13,9 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.flights.FlightApp.Service.UserService;
-import com.flights.FlightApp.Types.User;
+import com.FlightApp.Userside.Users.Service.UserService;
+import com.FlightApp.Userside.Users.Types.User;
 
 @CrossOrigin(origins = "*")
 @RestController

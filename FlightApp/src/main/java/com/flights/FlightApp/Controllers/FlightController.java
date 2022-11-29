@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.flights.FlightApp.Calculators.PriceCalculator;
 import com.flights.FlightApp.Service.FlightService;
 import com.flights.FlightApp.Types.Flights;
 
@@ -88,5 +89,13 @@ public class FlightController {
 		log.info("Deleting Flight with id " + id);
 		
 		return (fService.deleteFlight(id) == 1 ? "ok" : "failed");
+	}
+	
+	@PostMapping("/price/{id}/{age}")
+	public int makePrice(@PathVariable int id, @PathVariable int age) {
+		
+		Flights flight = fService.findFlightByid(id);
+		
+		return PriceCalculator.calculatePrice(age, flight.getPrice());
 	}
 }

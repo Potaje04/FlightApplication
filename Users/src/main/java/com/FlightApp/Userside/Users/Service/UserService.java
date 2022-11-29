@@ -1,10 +1,11 @@
-package com.flights.FlightApp.Service;
+package com.FlightApp.Userside.Users.Service;
+
+import com.FlightApp.Userside.Users.Types.User;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.flights.FlightApp.Types.User;
 
 @Component
 public interface UserService {
