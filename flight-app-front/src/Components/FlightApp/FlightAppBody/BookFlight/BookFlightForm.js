@@ -1,9 +1,17 @@
 import React from "react";
 import { useState } from "react";
+import { useFetch } from "../../../../Services";
+
 
 const BookFlightForm = (props) => {
   const [data, setData] = useState({});
-  
+
+  //var price = useFetch("http://localhost:8080/flights/price/"+ props.flight.id+"/"+ 0)
+
+  const [price, setPrice] = useState();
+
+
+
   const handleSubmit = (event) => {
     props.flightBooked(data);
   };

@@ -3,14 +3,54 @@ import NewFlightHeader from "./NewFlightHeader";
 import NewFlightList from "./NewFlightList";
 
 const NewFlight = (props) => {
-  const filteredFlights = props.flights;
   const [filter, setFilter] = useState({
     airline: "None",
     scales: "None",
     day: "None",
     luggage: "None",
   });
+  var filteredFlights = props.flights;
+  
+  if (filter.airline !== "None") {
+    filteredFlights = filteredFlights.filter(
+      (flight) => flight.airline === filter.airline
+    );
+  }
+  
+  if (filter.scales !== "None") {
+    filteredFlights = filteredFlights
+      .map((flight) => {
+        console.log(flight.scales);
+        if (flight.scales > 0 || flight.scales === "Yes") {
+          flight.scales = "Yes";
+        } else {
+          flight.scales = "No";
+        }
+        return flight;
+      })
+      .filter((flight) => flight.scales === filter.scales);
+  }
 
+  if (filter.luggage !== "None") {
+    
+    filteredFlights = filteredFlights
+      .map((flight) => {
+        if (flight.luggage === true || flight.luggage === "Yes") {
+          flight.luggage = "Yes";
+        } else {
+          flight.luggage = "No";
+        }
+        return flight;
+      })
+      .filter((flight) => flight.luggage === filter.luggage);
+  
+  }
+  if (filter.day !== "None") {
+    filteredFlights = filteredFlights.filter(
+      (flight) => Math.abs(flight.date.getDate() - filter.day.getDate()) < 4
+    );
+  }
+    console.log(filter.day);
   const filterFlights = (option, data) => {
     switch (option) {
       case "airline":

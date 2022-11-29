@@ -6,12 +6,12 @@ import FlightApp from "./Components/FlightApp/FlightApp";
 
 const user = { name: "Name", identification: "83913298273FQW" };
 const airlines = ["Iberia", "Flight Emirates", "British Airlines", "Ryanair"];
- /*const flights = [
+ const flights = [
 {
 origin: "Madrid",
 destination: "Barcelona",
 price: "price_not_implemented",
-scales: false,
+scales: 0,
 luggage: true,
 airline: "Iberia",
 date: new Date(2022, 2, 12),
@@ -23,7 +23,7 @@ layover: false,
 origin: "Madrid",
 destination: "Paris",
 price: "price_not_implemented",
-scales: false,
+scales: 0,
 luggage: true,
 airline: "Ryanair",
 date: new Date(2022, 2, 13),
@@ -35,7 +35,7 @@ layover: false,
 origin: "Madrid",
 destination: "London",
 price: "price_not_implemented",
-scales: true,
+scales: 1,
 luggage: true,
 airline: "Ryanair",
 date: new Date(2022, 2, 13),
@@ -47,7 +47,7 @@ layover: false,
 origin: "Madrid",
 destination: "Firenze",
 price: "price_not_implemented",
-scales: false,
+scales: 0,
 luggage: false,
 airline: "Ryanair",
 date: new Date(2022, 2, 13),
@@ -59,7 +59,7 @@ layover: false,
 origin: "Madrid",
 destination: "New York",
 price: "price_not_implemented",
-scales: false,
+scales: 2,
 luggage: true,
 airline: "Flight Emirates",
 date: new Date(2022, 2, 13),
@@ -67,11 +67,11 @@ flightNumber: "29836136",
 transitTime: 6.5,
 layover: false,
 },
-]; */
+];
 function App() {
   let show = "";
   const [logged, setlogged] = useState(false);
-  const flights = useFetch("http://localhost:8080/flights/").data
+  //const flights = useFetch("http://localhost:8080/flights/").data
   console.log(flights);
   if (!logged) {
     show = <Logging setlogged={setlogged} />;

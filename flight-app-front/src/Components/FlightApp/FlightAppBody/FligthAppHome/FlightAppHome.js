@@ -12,7 +12,7 @@ const FlightAppHome = (props) => {
       <div>
         wqeewqew
         <button onClick={myFlightsHandler}> My Flights</button>
-        <button onClick={newFlightHandler}> New Flight </button>
+        <button onClick={newFlightHandler}> Book new Flight </button>
       </div>
     );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NewFlightFilter from "./NewFlightFilter";
+import Calendar from "react-calendar";
 
 const NewFlightHeader = (props) => {
   const [filteredAirLine, setfilteredAirLine] = useState("None");
@@ -20,10 +21,10 @@ const NewFlightHeader = (props) => {
     props.filterFlights("luggage", luggage);
   };
 
-  const [day, setDay] = useState("None");
-  const dayHandler = (day) => {
-    setDay(day);
-    props.filterFlights("day", day);
+  const [value, onChange] = useState(new Date());
+  const calendarHandler = (date) => {
+    onChange(date);
+    props.filterFlights("day", date);
   };
   return (
     <div>
@@ -48,13 +49,7 @@ const NewFlightHeader = (props) => {
         options={["No", "Yes"]}
         none={true}
       />
-      <NewFlightFilter
-        name="Day"
-        selected={day}
-        onChangeFilter={dayHandler}
-        options={["Today", "Tomorrow", "In Two Days"]}
-        none={true}
-      />
+      <Calendar onChange={calendarHandler} value={value} />
     </div>
   );
 };
