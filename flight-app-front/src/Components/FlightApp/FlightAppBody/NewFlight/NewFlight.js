@@ -4,14 +4,13 @@ import NewFlightList from "./NewFlightList";
 
 const NewFlight = (props) => {
   const filteredFlights = props.flights;
-    const [filter, setFilter] = useState({
+  const [filter, setFilter] = useState({
     airline: "None",
     scales: "None",
     day: "None",
     luggage: "None",
   });
-  
-  
+
   const filterFlights = (option, data) => {
     switch (option) {
       case "airline":

@@ -2,10 +2,6 @@ package com.flights.FlightApp.Types;
 
 public class PriceFactory implements Price{
 
-	public PriceFactory() {
-		
-	}
-	
 	
 	public int calculatedPrice() {
 	
@@ -13,9 +9,11 @@ public class PriceFactory implements Price{
 	}
 
 	
-	public int defaultPrice() {
+	public static int defaultPrice() {
 	
-		return 0;
+		return DEFAULT_PRICE;
 	}
-
+	
+	
+	private final int DEFAULT_PRICE = 100;
 }

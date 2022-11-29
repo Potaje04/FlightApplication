@@ -20,7 +20,6 @@ public class Flights {
 	}
 	
 	public Flights(String origin, String destination, int scales, boolean luggage, String airline, String date) {
-		super();
 		this.origin = origin;
 		this.destination = destination;
 		this.scales = scales;
@@ -34,7 +33,7 @@ public class Flights {
 			e.printStackTrace();
 		}
 		
-		price = 30;
+		
 	}
 	
 	public String getOrigin() {
