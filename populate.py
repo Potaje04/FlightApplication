@@ -1,4 +1,4 @@
-import request
+import requests
 import random
 
 
@@ -10,11 +10,10 @@ def main():
     random.randint(inf, top)
 
 
-    for a in range(top):
-        luggage = 
+    for a in range(10):
+
         r = requests.post('http://localhost:8080/flights/create', json={"origin": "Madrid",
     "destination": origins[random.randint(0, 7)],
-    "price": "price_not_implemented",
     "scales": random.randint(0, 4),
     "luggage": bool(random.getrandbits(1)),
     "airline": airlines[random.randint(0, 3)],
@@ -23,6 +22,7 @@ def main():
     "transitTime": (random.randint(1, 5) + random.randint(1, 9)/10),
     "layover": bool(random.getrandbits(1)),
 })
+    print(r)
 
 
 
