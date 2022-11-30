@@ -25,15 +25,12 @@ public class Flights {
 		this.scales = scales;
 		this.luggage = luggage;
 		this.airline = airline;
-		
 		SimpleDateFormat datef = new SimpleDateFormat("yyyy-mm-dd");
 		try {
 			this.date = datef.parse(date);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 	
 	public String getOrigin() {
@@ -75,6 +72,10 @@ public class Flights {
 	public int getId() {
 		return id;
 	}
+	
+	public void setPrice(int price) {
+		this.price = price;
+	}
 	public int getPrice() {
 		return price;
 	}
@@ -100,7 +101,7 @@ public class Flights {
 	private String destination;
 	
 	@Nonnull
-	private int price;
+	private int price = 100;
 	
 	@Nonnull
 	private int scales;

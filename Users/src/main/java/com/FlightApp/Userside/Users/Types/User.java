@@ -1,4 +1,4 @@
-package com.flights.FlightApp.Types;
+package com.FlightApp.Userside.Users.Types;
 
 import java.util.List;
 
@@ -19,17 +19,6 @@ public class User {
 	}
 	
 	
-	public User(String name, String surname, String identification, int age, List<Flights> flights) {
-		super();
-		this.name = name;
-		this.surname = surname;
-		this.identification = identification;
-		this.age = age;
-		this.flights = flights;
-	}
-
-
-
 	public User(String name, String surname, String identification, int age) {
 		super();
 		this.name = name;
@@ -37,8 +26,7 @@ public class User {
 		this.identification = identification;
 		this.age = age;
 	}
-	
-	
+
 
 	public int getId() {
 		return id;
@@ -80,18 +68,6 @@ public class User {
 		this.age = age;
 	}
 
-	public List<Flights> getFlights() {
-		return flights;
-	}
-
-	public void setFlights(List<Flights> flights) {
-		this.flights = flights;
-	}
-	
-	public void addFlight(Flights flight) {
-		this.flights.add(flight);
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -108,7 +84,4 @@ public class User {
 	@Nonnull
 	private int age;
 	
-	@OneToMany
-	private List<Flights> flights;
-
 }

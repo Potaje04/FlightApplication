@@ -1,11 +1,10 @@
-package com.flights.FlightApp.Repository;
+package com.FlightApp.Userside.Users.Repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
-import com.flights.FlightApp.Types.User;
+import com.FlightApp.Userside.Users.Types.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	@Query("SELECT u FROM User u WHERE u.name =?1")
