@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.flights.FlightApp.Calculators.PriceCalculator;
+import com.flights.FlightApp.Helper.Validator;
 import com.flights.FlightApp.Service.FlightService;
 import com.flights.FlightApp.Types.Flights;
 
@@ -91,11 +91,11 @@ public class FlightController {
 		return (fService.deleteFlight(id) == 1 ? "ok" : "failed");
 	}
 	
-	@PostMapping("/price/{id}/{age}")
-	public int makePrice(@PathVariable int id, @PathVariable int age) {
+	
+	@GetMapping("validate/{id}/{name}")
+	public String validateBooking(@PathVariable int id, @PathVariable String name) {
 		
-		Flights flight = fService.findFlightByid(id);
-		
-		return PriceCalculator.calculatePrice(age, flight.getPrice());
+		return Validator.validateResponse(id, name) ? "Aceptado" : "Rechazado";
 	}
+	
 }
