@@ -2,6 +2,7 @@
 
 const FlightAppHome = (props) => {
     const myFlightsHandler = () => {
+        props.setMyFlights(true);
         console.log("My Flights");
     }
     const newFlightHandler = () => {

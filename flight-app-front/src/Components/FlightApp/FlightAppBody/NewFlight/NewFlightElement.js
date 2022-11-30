@@ -9,6 +9,7 @@ const NewFlightElement = (props) => {
       <div>
         {props.flight.origin} to {props.flight.destination}
         <p>Flight Nº: {props.flight.flightNumber}</p>
+        <p>{props.flight.date.getDate()}</p>
         <button onClick={selectflight}>Book</button>
       </div>
     );

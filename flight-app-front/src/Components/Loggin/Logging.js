@@ -7,8 +7,8 @@ const Logging = (props) => {
     }
     return (
       <div>
-        <imput>user: </imput>
-        <imput>password: </imput>
+        <p>user: </p>
+        <p>password: </p>
         <button onClick={loggingHandler}>Log!</button>
       </div>
     );

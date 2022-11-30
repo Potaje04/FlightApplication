@@ -5,7 +5,7 @@ const BookFlight = (props) => {
     return (
       <div>
         {props.flight.flightNumber}
-        <BookFlightForm flightBooked={props.flightBooked} />
+        <BookFlightForm flight={props.flight}  flightBooked={props.flightBooked} />
       </div>
     );
 }
