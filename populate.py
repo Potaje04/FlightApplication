@@ -10,7 +10,7 @@ def main():
     random.randint(inf, top)
 
 
-    for a in range(10):
+    for a in range(5000):
         month = random.randint(1,12)
         day = random.randint(1,28)
         if day < 10: 
